@@ -1,0 +1,183 @@
+-------------------------
+% Resume in Latex
+% Author : Charlie Pecora
+% Based off of: https://github.com/jakegut/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+\vspace{-7pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Charlie Pecora} \\ \vspace{1pt}
+    \small (408) 483-7941 $|$ \href{mailto:charlie.pecora@gmail.com}{\underline{charlie.pecora@gmail.com}} $|$ 
+    \href{https://github.com/charlie-pecora}{\underline{github.com/charlie-pecora}}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Levelten Energy}{Seattle, WA}
+      {Lead Software Engineer}{May 2023 -- Present}
+        \resumeSubSubheading
+      {Senior Software Engineer}{May 2022 -- May 2023}
+      \resumeItemListStart
+        \resumeItem{Led design and implementation for migrating renewable energy marketplace analytics processing to a distributed architecture
+          using Cloud Run, Dataflow, Cloud Tasks, and Cloud Storage, resulting in a 10x improvement in processing time and reduction of on-call incidents from bi-weekly to near zero}
+        \resumeItem{Led a six-month, multi-team effort to replace the methodology used for renewable energy financial analytics in our platform,
+          developed using feature flags and released in phases to ensure a smooth delivery}
+        \resumeItem{}
+      \resumeItemListEnd
+
+%-------------------------------------------
+
+    \resumeSubheading
+      {Blue Origin}{Kent, WA}
+      {Developer - Data and Business Intelligence III}{September 2020 -- May 2022}
+        \resumeSubSubheading
+      {Developer - Data and Business Intelligence II}{September 2020 -- May 2022}
+      \resumeItemListStart
+        \resumeItem{Created and scheduled ETL pipelines in Dagster to extract data from relational databases, REST APIs, GraphQL APIs, ElasticSearch, and shared drive files}
+        \resumeItem{Wrote SQL data transforms using DBT in PostgreSQL to support analytics and reporting needs}
+        \resumeItem{Developed a part shortage report, which takes user inputs as configuration and calculates inventory shortcomings by analyzing design, inventory, manufacturing, and procurement data, and is now the company’s} trusted source for identifying hardware shortages and supports roughly 50 regular users
+        \resumeItem{The part shortage report is composed of a web interface for user input (Vue front-end and FastAPI back-end), a background data processing service (Python with Redis for query caching), and a Tableau report}
+        \resumeItem{Developed a Python REST API using FastAPI to provide Design Engineers with automated access to up-to-date material properties from the company’s materials database}
+        \resumeItem{Automated code and infrastructure deployment to AWS using Docker, Terraform, and Gitlab CI}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {APiJET}{Seattle, WA}
+      {Systems Engineer}{June 2018 -- August 2020}
+      \resumeItemListStart
+        \resumeItem{Created a data pipeline using Python, PostgreSQL, cron, and AWS S3 to decode avionics data and make it readily available for batch analytics processing}
+        \resumeItem{Used the data pipeline to implement logic for real-time aircraft alerting and reporting logic}
+        \resumeItem{Developed algorithms to determine an aircraft’s deviation from its flight plan}
+        \resumeItem{Managed the network and hardware configuration within the avionics system integration lab}
+        \resumeItem{Performed and documented system integration testing for the airborne software platform}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, JavaScript, Golang, Rust} \\
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Washington}{Seattle, WA}
+      {Master of Science in Aeronautics and Astronautics}{September 2016 -- June 2018}
+    \resumeSubheading
+      {University of Miami}{Coral Gables, FL}
+      {Bachelor of Science in Mechanical Engineering, Minor in Economics}{August 2012 -- May 2016}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
